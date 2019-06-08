@@ -1,10 +1,13 @@
 package br.edu.utfpr.alunos.model;
 
 import java.sql.Date;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -23,6 +26,8 @@ public class Show {
     @Column(name = "band")
 	private String band;
     
+    private Set<LocalEvent> local;
+        
     public Show(int id, Date date, String band) {
     	setId(id);
     	setDate(date);
