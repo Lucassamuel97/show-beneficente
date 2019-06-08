@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -28,8 +29,8 @@ public class Show {
     @OneToMany
     private Set<TicketOrder> TicketOrders;
     
-    @OneToMany
-    private Set<LocalEvent> localEvents;
+    @ManyToOne
+    private LocalEvent localEvents;
        
     public Show() {
     	super();

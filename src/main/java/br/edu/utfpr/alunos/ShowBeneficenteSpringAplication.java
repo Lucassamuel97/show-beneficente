@@ -7,7 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import br.edu.utfpr.alunos.services.UserService;
+import br.edu.utfpr.alunos.services.MainService;
 
 @SpringBootApplication
 public class ShowBeneficenteSpringAplication {
@@ -15,7 +15,7 @@ public class ShowBeneficenteSpringAplication {
 	@Value("${pagina.quantidade}")
 	private int quantidade;
 	@Autowired
-	private UserService userService;
+	private MainService mainService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ShowBeneficenteSpringAplication.class, args);
@@ -24,7 +24,7 @@ public class ShowBeneficenteSpringAplication {
 	@Bean
 	public CommandLineRunner commandLineRunner() {
 		return args -> {
-			userService.init();
+			mainService.init();
 		};
 	}
 }
