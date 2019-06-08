@@ -8,6 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.Data;
+
+@Data
 @Entity
 @Table(name = "users")
 public class User {
@@ -28,10 +31,9 @@ public class User {
         super();
     }
     
-	public User(Long id, String name, int age, Set<TicketOrder> ticketsOrders) {
+	public User(Long id, String name, int age) {
 		this.id = id;
 		this.name = name;
 		this.age = age;
-		this.ticketOrders = ticketsOrders;
 	}
 }

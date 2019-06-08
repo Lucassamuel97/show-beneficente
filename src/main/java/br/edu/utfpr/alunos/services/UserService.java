@@ -5,19 +5,16 @@
  */
 package br.edu.utfpr.alunos.services;
 
+import br.edu.utfpr.alunos.model.Show;
 import br.edu.utfpr.alunos.model.TicketOrder;
 import br.edu.utfpr.alunos.model.User;
 import br.edu.utfpr.alunos.repository.UserRepository;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.Date;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 
@@ -30,8 +27,12 @@ public class UserService {
     UserRepository userRepository;
 
     public void init() {
-        User user = new User(1L, "Lucas", 21, (Set<TicketOrder>) new ArrayList<TicketOrder>());
-
+        User user = new User(1L, "Lucas", 21);
+        Show show = new Show(1L, new Date(), "Paralamas");
+        TicketOrder ticketOrder = new TicketOrder(1L, 2,2.0, user, show);
+        
+        userRepository.save(user);
+        userRepository.save(show);
         userRepository.save(user);
     }
 }

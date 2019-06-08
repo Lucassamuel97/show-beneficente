@@ -20,11 +20,10 @@ public class ShowBeneficenteSpringAplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ShowBeneficenteSpringAplication.class, args);
 	}
-
+	
 	@Bean
 	public CommandLineRunner commandLineRunner() {
 		return args -> {
-			System.out.println("Quantidade " + quantidade);
 			userService.init();
 		};
 	}

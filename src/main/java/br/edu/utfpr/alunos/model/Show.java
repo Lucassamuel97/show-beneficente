@@ -1,6 +1,6 @@
 package br.edu.utfpr.alunos.model;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -32,14 +32,14 @@ public class Show {
     private Set<LocalEvent> localEvents;
        
     public Show() {
-    	
+    	super();
     }
-    
-    public Show(Long id, Date date, String band, Set<LocalEvent> localEvents, Set<TicketOrder> ticketOrders) {
-    	setId(id);
-    	setDate(date);
-    	setBand(band);
-    	this.localEvents = localEvents;
-    	this.TicketOrders = ticketOrders;
-    }
+
+	public Show(Long id, Date date, String band) {
+		super();
+		this.id = id;
+		this.date = date;
+		this.band = band;
+	}
+ 
 }
