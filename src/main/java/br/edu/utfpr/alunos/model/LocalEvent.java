@@ -1,12 +1,11 @@
 package br.edu.utfpr.alunos.model;
 
 import java.sql.Date;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -28,14 +27,18 @@ public class LocalEvent {
 	@Column(name = "city")
     private String city;
 	
+	@ManyToOne
+    private Show show;
+	
 	public LocalEvent() {
 		super();
 	}
 	
-    public LocalEvent(Long id, Date startDate, Date endDate, String city) {
+    public LocalEvent(Long id, Date startDate, Date endDate, String city, Show show) {
 		this.id = id;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.city = city;
+		this.show = show;
 	}
 }

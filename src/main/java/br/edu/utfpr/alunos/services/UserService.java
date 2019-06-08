@@ -5,10 +5,15 @@
  */
 package br.edu.utfpr.alunos.services;
 
+import br.edu.utfpr.alunos.model.TicketOrder;
 import br.edu.utfpr.alunos.model.User;
 import br.edu.utfpr.alunos.repository.UserRepository;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +30,7 @@ public class UserService {
     UserRepository userRepository;
 
     public void init() {
-        User user = new User(1L, "Lucas", 21);
+        User user = new User(1L, "Lucas", 21, (Set<TicketOrder>) new ArrayList<TicketOrder>());
 
         userRepository.save(user);
     }

@@ -3,12 +3,12 @@ package br.edu.utfpr.alunos.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "ticket")
-public class Ticket {
+@Table(name = "ticket_order")
+public class TicketOrder {
     @Id
     @Column(name = "id")
     private Long id;
@@ -19,20 +19,22 @@ public class Ticket {
     @Column(name = "donation_value")
     private double donationValue;
     
-    @OneToMany
+    @ManyToOne
     private Show show;
     
-    @OneToMany
+    @ManyToOne
     private User user;
     
-	public Ticket() {
+	public TicketOrder() {
 		super();
 	}
 	
-	public Ticket(Long id, int amount, double donationValue) {
+	public TicketOrder(Long id, int amount, double donationValue, User user, Show show) {
 		super();
 		this.id = id;
 		this.amount = amount;
 		this.donationValue = donationValue;
+		this.user = user;
+		this.show = show;
 	}    
 }
