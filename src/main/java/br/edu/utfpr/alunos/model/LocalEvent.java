@@ -17,13 +17,13 @@ public class LocalEvent {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "data_inicio")
+    @Column(name = "start_date")
     private Date startDate;
 
-    @Column(name = "data_evento")
+    @Column(name = "end_date")
     private Date endDate;
 
-	@Column(name = "cidade")
+	@Column(name = "city")
     private String city;
 	
 	public LocalEvent() {

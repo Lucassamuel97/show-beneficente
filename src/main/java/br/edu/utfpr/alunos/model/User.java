@@ -7,16 +7,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
-
 public class User {
 	@Id
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "nome")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "idade")
+    @Column(name = "age")
     private int age;
     
     public User() {
