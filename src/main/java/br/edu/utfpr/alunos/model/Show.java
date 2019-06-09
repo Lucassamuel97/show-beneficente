@@ -25,12 +25,6 @@ public class Show {
     
     @Column(name = "band")
 	private String band;
-
-    @OneToMany
-    private Set<TicketOrder> TicketOrders;
-    
-    @ManyToOne
-    private LocalEvent localEvents;
        
     public Show() {
     	super();

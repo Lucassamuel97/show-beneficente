@@ -23,10 +23,7 @@ public class User {
 
     @Column(name = "age")
     private int age;
-    
-    @OneToMany
-    Set<TicketOrder> ticketOrders;
-    
+        
     public User() {
         super();
     }

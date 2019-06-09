@@ -6,7 +6,20 @@
 package br.edu.utfpr.alunos.repository;
 
 import br.edu.utfpr.alunos.model.User;
-import org.springframework.data.jpa.repository.JpaRepository;
-public interface UserRepository extends JpaRepository<User, Long> {
 
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.transaction.annotation.Transactional;
+public interface UserRepository extends JpaRepository<User, Long> {
+    @Transactional(readOnly = true)
+    
+    //Apresentar todos usuários cadastrados.
+//    @Query("select u from User u")
+//    List<User> findAll();
+//    
+    //Encontrar por nome comeca com ____
+    @Query("select u from User u where u.name like %?1")
+    List<User> findByNameBeginsWith(String name);
 }

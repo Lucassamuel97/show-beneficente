@@ -1,12 +1,13 @@
 package br.edu.utfpr.alunos.model;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -28,7 +29,7 @@ public class LocalEvent {
 	@Column(name = "city")
     private String city;
 	
-	@ManyToOne
+	@OneToMany
 	private Set<Show> show;
 	
 	public LocalEvent() {
@@ -40,6 +41,7 @@ public class LocalEvent {
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.city = city;
+		this.show = new HashSet<Show>();
 	}
     
     public void insertShow(Show show){
