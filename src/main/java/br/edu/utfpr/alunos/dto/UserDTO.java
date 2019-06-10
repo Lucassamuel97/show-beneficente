@@ -4,7 +4,9 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import br.edu.utfpr.alunos.model.User;
+import lombok.Data;
 
+@Data
 public class UserDTO {
 	
 	private Long id;
@@ -27,29 +29,5 @@ public class UserDTO {
 		this.id = user.getId();
 		this.name = user.getName();
 		this.age = user.getAge();
-	}
-	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
 	}
 }

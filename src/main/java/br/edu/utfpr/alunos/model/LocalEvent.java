@@ -30,7 +30,7 @@ public class LocalEvent {
     private String city;
 	
 	@OneToMany
-	private Set<Show> show;
+	private Set<Show> shows; 
 	
 	public LocalEvent() {
 		super();
@@ -41,10 +41,10 @@ public class LocalEvent {
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.city = city;
-		this.show = new HashSet<Show>();
+		this.shows = new HashSet<Show>();
 	}
     
     public void insertShow(Show show){
-    	this.show.add(show);
+    	this.shows.add(show);
     }
 }
