@@ -1,7 +1,7 @@
 package br.edu.utfpr.alunos.dto;
 
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.NotBlank;
 
 import br.edu.utfpr.alunos.model.User;
 import lombok.Data;
@@ -11,7 +11,7 @@ public class UserDTO {
 	
 	private Long id;
 	
-	@NotEmpty(message = "O nome do usuario não pode ser nulo")
+	@NotBlank(message = "O nome do usuario não pode estar em branco")
     @Length(min = 2, max = 100, message = "O nome do usuario deve conter no mínimo 2 e máximo 100 caracteres.")
     private String name;
 
