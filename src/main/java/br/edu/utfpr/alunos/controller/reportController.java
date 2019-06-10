@@ -66,6 +66,10 @@ public class reportController {
     
     //Apresentar os usuários que compraram ingressos para um dado show.
     
+    
+    
+    
+    
     //Apresentar os shows e usuários que compraram entre 3 e 5 ingressos.
     @GetMapping(value = "/usuarios-compras")
     public List<TicketOrder> findAllTicketsRequests() {
@@ -79,4 +83,6 @@ public class reportController {
     	List<TicketOrder> ticktsOrder = ticketOrderRepository.finduserGreaterOrder();
         return ticktsOrder;
     }
+    
+    
 }
