@@ -21,10 +21,6 @@ import br.edu.utfpr.alunos.dto.UserDTO;
 import br.edu.utfpr.alunos.model.LocalEvent;
 import br.edu.utfpr.alunos.model.TicketOrder;
 import br.edu.utfpr.alunos.model.User;
-import br.edu.utfpr.alunos.repository.LocalEventRepository;
-import br.edu.utfpr.alunos.repository.ShowRepository;
-import br.edu.utfpr.alunos.repository.TicketOrderRepository;
-import br.edu.utfpr.alunos.repository.UserRepository;
 import br.edu.utfpr.alunos.services.LocalEventService;
 import br.edu.utfpr.alunos.services.TicketOrderService;
 import br.edu.utfpr.alunos.services.UserService;
@@ -39,21 +35,9 @@ public class reportController {
 
 	@Autowired
 	LocalEventService localEventService;
-
-	@Autowired
-	UserRepository userRepository;
 	
 	@Autowired
 	TicketOrderService ticketOrderService;
-	
-	@Autowired
-	TicketOrderRepository ticketOrderRepository;
-
-	@Autowired
-	ShowRepository showRepository;
-
-	@Autowired
-	LocalEventRepository localEventRepository;
 
 	private int paginationAmount = 10;
 
