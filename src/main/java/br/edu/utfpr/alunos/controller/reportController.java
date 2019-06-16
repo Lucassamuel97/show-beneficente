@@ -83,13 +83,9 @@ public class reportController {
 		return ResponseEntity.ok(response);
 	}
 	
-	
-	
-	
-
 	// Apresentar todos os usuários que tem José como primeiro nome.
 	@GetMapping(value = "/usuarios-jose")
-	public List<User> findByNameUserParam(@RequestParam("nome") String name) {
+	public List<User> findByNameUserParam(@RequestParam("nome") String name){
 		List<User> users = userRepository.findByNameBeginsWith(name);
 		return users;
 	}

@@ -2,6 +2,7 @@ package br.edu.utfpr.alunos.services;
 
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,7 +17,7 @@ public class LocalEventService {
     LocalEventRepository localEventRepository;
     
     public Page<LocalEvent> findAllEventGuarapuava(PageRequest pageRequest) {
-    	return localEventRepository.findAllEventGuarapuava("Guarapuava", pageRequest);
+    	return localEventRepository.findByCity("Guarapuava", pageRequest);
     }
 
 }
