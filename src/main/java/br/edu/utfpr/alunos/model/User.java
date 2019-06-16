@@ -37,4 +37,8 @@ public class User {
 		this.name = user.getName();
 		this.age = user.getAge();
 	}
+	
+	public User(Long id){
+		this.id = id;
+	}
 }

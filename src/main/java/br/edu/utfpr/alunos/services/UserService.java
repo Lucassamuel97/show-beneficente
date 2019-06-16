@@ -1,5 +1,6 @@
 package br.edu.utfpr.alunos.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,10 @@ public class UserService {
 	
 	public Page<User> findAll(PageRequest pageRequest) {
 		 return userRepository.findAll(pageRequest);
+	}
+	
+	public ArrayList<User> findByNameUserParam(String name){
+		return userRepository.findByNameBeginsWith(name);
 	}
 	
 }

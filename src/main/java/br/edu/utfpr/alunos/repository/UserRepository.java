@@ -7,7 +7,7 @@ package br.edu.utfpr.alunos.repository;
 
 import br.edu.utfpr.alunos.model.User;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -18,5 +18,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     
     //Encontrar por nome comeca com ____
     @Query("select u from User u where u.name like %?1")
-    List<User> findByNameBeginsWith(String name);
+    ArrayList<User> findByNameBeginsWith(String name);
+	
 }

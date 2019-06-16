@@ -3,9 +3,11 @@ package br.edu.utfpr.alunos.services;
 
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import br.edu.utfpr.alunos.model.LocalEvent;
@@ -16,8 +18,12 @@ public class LocalEventService {
     @Autowired
     LocalEventRepository localEventRepository;
     
-    public Page<LocalEvent> findAllEventGuarapuava(PageRequest pageRequest) {
-    	return localEventRepository.findByCity("Guarapuava", pageRequest);
+    public List<LocalEvent> findAllEventGuarapuava() {
+    	LocalEvent localevent = new LocalEvent();
+    	localevent.setCity("Guarapuava");
+    	Example<LocalEvent> localEventExample = Example.of(localevent);
+    	
+    	return localEventRepository.findAll(localEventExample);
     }
 
 }
