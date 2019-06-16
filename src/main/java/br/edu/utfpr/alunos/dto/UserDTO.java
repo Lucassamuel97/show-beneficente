@@ -17,6 +17,10 @@ public class UserDTO {
 
     private int age;
     
+    public UserDTO(){
+    	
+    }
+    
 	public UserDTO(Long id, String name, int age) {
 		super();
 		this.id = id;
@@ -30,4 +34,5 @@ public class UserDTO {
 		this.name = user.getName();
 		this.age = user.getAge();
 	}
+	
 }
