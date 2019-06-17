@@ -30,7 +30,7 @@ public class TicketOrderService {
 		return ticketOrderRepository.findAllTicketsRequests();
 	}
 
-	public User finduserGreaterOrder() {
+	public User findUserGreaterOrder() {
 		return ticketOrderRepository.finduserGreaterOrder();
 	}
 	

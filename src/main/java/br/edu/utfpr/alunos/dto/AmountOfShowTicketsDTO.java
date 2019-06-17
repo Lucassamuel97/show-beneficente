@@ -5,10 +5,10 @@ import lombok.Data;
 
 @Data
 public class AmountOfShowTicketsDTO {
-	private int quant;
+	private Long quant;
 	private Show show;
 	
-	public AmountOfShowTicketsDTO(int quant, Show show) {
+	public AmountOfShowTicketsDTO(Long quant, Show show) {
 		super();
 		this.quant = quant;
 		this.show = show;

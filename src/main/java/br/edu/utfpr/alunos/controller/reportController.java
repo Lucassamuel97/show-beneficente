@@ -41,6 +41,7 @@ public class reportController {
 
 	private int paginationAmount = 10;
 
+	//ok
 	// Apresentar todos usuários cadastrados.
 	@GetMapping(value = "/usuarios")
 	public ResponseEntity<Response<List<UserDTO>>> findAllPagination(
@@ -58,6 +59,7 @@ public class reportController {
 		return ResponseEntity.ok(response);
 	}
 	
+	//ok
 	// Apresentar os eventos cadastrados para Guarapuava.
 	@GetMapping(value = "/eventos-guara")
 	public ResponseEntity<Response<List<LocalEventDTO>>> findAllEventGuarapuava(){
@@ -74,7 +76,7 @@ public class reportController {
 	}
 	
 	// Apresentar todos os usuários que tem José como primeiro nome.
-	@GetMapping(value = "/usuarios-jose")
+	@GetMapping(value = "/usuario-jose")
 	public ResponseEntity<Response<List<UserDTO>>> findByNameUserParam(@RequestParam("nome") String name){
 		Response<List<UserDTO>> response = new Response<>();
 		
@@ -119,6 +121,7 @@ public class reportController {
 		return ResponseEntity.ok(response);
 	}
 
+	//ok
 	// Apresentar os shows e usuários que compraram entre 3 e 5 ingressos.(Retorna Todos os dados)
 	@GetMapping(value = "/usuarios-compras")
 	public ResponseEntity<Response<List<TicketOrderDTO>>> findAllTicketsRequests() {
@@ -135,26 +138,27 @@ public class reportController {
 		return ResponseEntity.ok(response);
 	}
 
+	//ok
 	// Apresentar o usuário que doou o maior valor em um pedido.
 	@GetMapping(value = "/usuarios-maior-valor")
 	public ResponseEntity<Response<UserDTO>> finduserGreaterOrder() {
 		Response<UserDTO> response = new Response<>();
 		
-		User user = ticketOrderService.finduserGreaterOrder();
+		User user = ticketOrderService.findUserGreaterOrder();
 		UserDTO userDTO = new UserDTO(user);
 		
 		response.setData(userDTO);
 		return ResponseEntity.ok(response);
 	}
 	
-	// Apresentar a quantidade de ingressos vendidos para cada show.
+//	 Apresentar a quantidade de ingressos vendidos para cada show.
 	@GetMapping(value = "/quant-ingressos")
 	public ResponseEntity<Response<List<AmountOfShowTicketsDTO>>> findAmountOfShowTickets(){
 		Response<List<AmountOfShowTicketsDTO>> response = new Response<>();
 		
-		List<AmountOfShowTicketsDTO> amout = ticketOrderService.findAmountOfShowTicketsDTO();
+		List<AmountOfShowTicketsDTO> amouts = ticketOrderService.findAmountOfShowTicketsDTO();
 	
-		response.setData(amout);
+		response.setData(amouts);
 		return ResponseEntity.ok(response);
 	}
 }

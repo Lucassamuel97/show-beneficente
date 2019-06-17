@@ -22,6 +22,6 @@ public interface TicketOrderRepository extends JpaRepository<TicketOrder, Long>{
 	@Query("select t.user from TicketOrder t where t.show.id = ?")
     List<User> findPerShowUser(Long id);
 	
-	@Query("select COUNT(*) as quant, t.show FROM ticket_order GROUP BY t.show")
+	@Query("select SUM(t.amount), t.show FROM TicketOrder t GROUP BY t.show")
 	List<AmountOfShowTicketsDTO> findAmountOfShowTicketsDTO();
 }
