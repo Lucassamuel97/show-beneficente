@@ -72,10 +72,12 @@ public class MainService {
         
         TicketOrder tickt1 = new TicketOrder(1L, 3, 2.0, user1, show1);
         TicketOrder tickt2 = new TicketOrder(2L, 4, 200.0, user1, show2);
-        TicketOrder tickt3 = new TicketOrder(3L, 10,2.0, user2, show3);
+        TicketOrder tickt3 = new TicketOrder(3L, 10, 2.0, user2, show3);
+        TicketOrder tickt4 = new TicketOrder(4L, 10, 2.0, user3, show1);
         
         ticketOrderRepository.save(tickt1);
         ticketOrderRepository.save(tickt2);
         ticketOrderRepository.save(tickt3);
+        ticketOrderRepository.save(tickt4);
     }
 }
